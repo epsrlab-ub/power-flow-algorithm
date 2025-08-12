@@ -10,11 +10,6 @@ The algorithms have been validated on the **IEEE 33-bus distribution test system
 - **Z-Bus Method**
 - **Decoupled Power Flow Method**
 
-## Usage
-Clone the repository:
-```bash
-git clone https://github.com/epsrlab-ub/power-flow-algorithm.git
-
 ## Contributions
 
 This work is the result of collaborative efforts:
@@ -23,3 +18,8 @@ This work is the result of collaborative efforts:
 |----------------------|---------------------------|------------------------|
 | **Morufdeen Atilola** | Developed the set of codes | 📧 morufdee@buffalo.edu |
 | **Adedoyin Inaolaji** | Supervised the work        | 📧 ainaolaj@buffalo.edu |
+
+## Usage
+Clone the repository:
+```bash
+git clone https://github.com/epsrlab-ub/power-flow-algorithm.git
