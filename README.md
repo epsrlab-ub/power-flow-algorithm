@@ -1,7 +1,7 @@
 # Power Flow Algorithm Repository
 
 This repository contains a collection of **MATLAB** and **Python** codes that solve **AC power flow problems** using five conventional methods.  
-The algorithms have been validated on the **IEEE 33-bus distribution test system** for users’ convenience. The algorithms have the capabilities to be used for other types of system networks (radial or mesh)
+The algorithms have been validated on the **33-bus distribution test system** for users’ convenience, and they are capable of being applied to various types of system networks, including radial and mesh configurations.
 
 ## Contents
 - **Backward/Forward Sweep Method**
@@ -18,6 +18,13 @@ This work is the result of collaborative efforts:
 |----------------------|---------------------------|------------------------|
 | **Morufdeen Atilola** | Developed the set of codes | 📧 morufdee@buffalo.edu |
 | **Adedoyin Inaolaji** | Supervised the work        | 📧 ainaolaj@buffalo.edu |
+
+
+**Note:**  
+The algorithms provided in this repository are designed and validated for **single-phase** power flow analysis.  
+They do not currently support three-phase or unbalanced system modeling.  
+Modifications are required to extend the algorithms for multi-phase applications.
+
 
 ## Usage
 Clone the repository:
