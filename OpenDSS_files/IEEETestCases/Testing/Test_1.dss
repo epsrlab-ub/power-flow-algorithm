@@ -1,0 +1,43 @@
+// Clear previous data
+Clear
+
+// Define the base frequency and nominal voltage
+Set DefaultBaseFrequency=60
+New Circuit.MyCircuit basekv=12.66 pu=1.00 phases=3
+
+// Define lines with provided R and X values
+// Line 1-2
+New Line.Line12 Bus1=Bus1 Bus2=Bus2 Length=1 units=km phases=3
+~ R1=0.1 X1=0.2  // Replace with actual values
+
+// Line 2-3
+New Line.Line23 Bus1=Bus2 Bus2=Bus3 Length=1 units=km phases=3
+~ R1=0.1 X1=0.2  // Replace with actual values
+
+// Line 2-4
+New Line.Line24 Bus1=Bus2 Bus2=Bus4 Length=1 units=km phases=3
+~ R1=0.1 X1=0.2  // Replace with actual values
+
+// Line 3-4
+New Line.Line34 Bus1=Bus3 Bus2=Bus4 Length=1 units=km phases=3
+~ R1=0.1 X1=0.2  // Replace with actual values
+
+// Define loads with provided P and Q values
+// Load at Bus 1 (Typically a slack bus without load)
+New Load.Load1 Bus1=Bus1 Phases=3 Conn=Wye kV=12.66 kW=0 kvar=0
+
+// Load at Bus 2
+New Load.Load2 Bus1=Bus2 Phases=3 Conn=Wye kV=12.66 kW=100 kvar=50
+
+// Load at Bus 3
+New Load.Load3 Bus1=Bus3 Phases=3 Conn=Wye kV=12.66 kW=150 kvar=75
+
+// Load at Bus 4
+New Load.Load4 Bus1=Bus4 Phases=3 Conn=Wye kV=12.66 kW=200 kvar=100
+
+// Solve the power flow
+Solve
+
+// Display voltage and power flow results
+Show Voltages LN Nodes
+Show Powers

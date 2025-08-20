@@ -1,0 +1,59 @@
+ClearAll
+
+New Circuit.source phases=3 bus1=0 basekv=12.47 model=ideal
+
+New Linecode.lc nphases=3 unit=mi
+~ r1=1.4325 x1=0.836107
+~ r0=1.56871 x0=1.65866
+~ c1=0 c0=0
+
+New Line.L01 phases=3 bus1=0 bus2=1 linecode=lc length=1 unit=mi normamps=100
+New Line.L12 phases=3 bus1=1 bus2=2 linecode=lc length=1 unit=mi normamps=100
+New Line.L23 phases=3 bus1=2 bus2=3 linecode=lc length=0.8 unit=mi normamps=80
+New Line.L24 phases=3 bus1=2 bus2=4 linecode=lc length=1 unit=mi normamps=20
+New Line.L56 phases=3 bus1=5 bus2=6 linecode=lc length=1 unit=mi normamps=15
+New Line.L57 phases=3 bus1=5 bus2=7 linecode=lc length=1.2 unit=mi normamps=15
+
+New Transformer.T45 phases=3 windings=2 %loadloss=1.34 %noloadloss=0.34 xhl=3.23 %imag=2.678507
+~ wdg=1 bus=4 kV=12.47 kva=500 conn=wye
+~ wdg=2 bus=5 kV=12.47 kva=500 conn=wye !tap=1.06624
+
+!New Regcontrol.Rg transformer=T45 winding=2 vreg=122 band=2  ptratio=60 eventlog=true
+
+New Load.L1 phases=3 bus1=1 kv=12.47 kw=300 pf=0.92 model=5 vminpu=0.7 vmaxpu=1.2
+New Load.L3 phases=3 bus1=3 kv=12.47 kw=800 pf=0.92 model=5 vminpu=0.7 vmaxpu=1.2
+New Load.L6 phases=3 bus1=6 kv=12.47 kw=50 pf=0.92 model=5 vminpu=0.7 vmaxpu=1.2
+New Load.L7 phases=3 bus1=7 kv=12.47 kw=100 pf=0.92 model=5 vminpu=0.7 vmaxpu=1.2
+
+New Generator.ExistingGen phases=3 bus1=2 kv=12.47 kw=1000 pf=1 vminpu=0.7 vmaxpu=1.2 enabled=no
+
+set voltagebases=[12.47] 
+calcvoltagebase
+
+!New Load.NewGen phases=3 bus1=3 kv=12.47 kw=200 pf=1 status=fixed vminpu=0.7 vmaxpu=1.2
+
+New Energymeter.M element=Line.L01 terminal=1
+
+!set loadmult=0.2
+
+!New Load.NewGen phases=3 bus1=4 kv=12.47 kw=-1500 pf=1 status=fixed vminpu=0.7 vmaxpu=1.2
+!New Load.NewGen phases=3 bus1=4 kv=12.47 kw=-1500 pf=1 status=fixed vminpu=0.7 vmaxpu=1.2
+
+!New Load.NewGen phases=3 bus1=1 kv=12.47 kw=-2400 pf=1 status=fixed vminpu=0.7 vmaxpu=1.2
+
+BusCoords coords.csv
+
+!Solve
+
+!show voltage ln nodes
+
+
+!save voltages
+
+!New Load.NewGen phases=3 bus1=1 kv=12.47 kw=-2600 pf=1 status=fixed vminpu=0.7 vmaxpu=1.2
+
+!solve
+!vdiff
+
+!show voltage ln nodes
+!plot profile
