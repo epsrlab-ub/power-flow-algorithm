@@ -25,6 +25,9 @@ The algorithms provided in this repository are designed and validated for **sing
 They do not currently support three-phase or unbalanced system modeling.  
 Modifications are required to extend the algorithms for multi-phase applications.
 
+## DataFiles Reference
+- **33-node:** M. E. Baran and F. F. Wu, "Network reconfiguration in distribution systems for loss reduction and load balancing," in IEEE Transactions on Power Delivery, vol. 4, no. 2, pp. 1401-1407, Apr 1989.
+- **730-node:** H. K. Vemprala, M. A. I. Khan, and S. Paudyal, “Open-source polyphase distribution system power flow analysis tool (DxFlow),” in Proc. IEEE International Conference on Electro Information Technology (EIT), pp. 1–6, IEEE, 2019.
 
 ## Usage
 Clone the repository:

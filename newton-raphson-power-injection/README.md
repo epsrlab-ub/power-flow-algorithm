@@ -66,3 +66,8 @@ Upon successful execution, the function provides:
 
 - `nrci_method.py`: Python code for the Newton Raphson Current Injection Method for power flow analysis.
 - `nrci_method.m`: MATLAB code for the Newton Raphson Current Injection Method for power flow analysis.
+
+## References
+
+- D. Das, “Electrical Power System,” New Age International (P) Publisher, New Delhi, 2006.
+- Anamika Dubey and Sumit Paudyal (2023), “Distribution System Optimization to Manage Distributed Energy Resources (DERs) for Grid Services”, Foundations and Trends® in Electric Energy Systems: Vol. 6, No. 3-4, pp 120–264. DOI: 10.1561/3100000030.

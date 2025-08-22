@@ -62,3 +62,7 @@ This provides a comprehensive tool for conducting power flow analysis in distrib
 
 - `zbus_method.py`: Python code for the Z_Bus power flow analysis.
 - `Z_Bus_method.m`: MATLAB code for the Z_Bus power flow analysis.
+
+## References
+
+- Anamika Dubey and Sumit Paudyal (2023), “Distribution System Optimization to Manage Distributed Energy Resources (DERs) for Grid Services”, Foundations and Trends® in Electric Energy Systems: Vol. 6, No. 3-4, pp 120–264. DOI: 10.1561/3100000030.

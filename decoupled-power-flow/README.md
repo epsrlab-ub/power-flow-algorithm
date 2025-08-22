@@ -83,3 +83,7 @@ This provides a comprehensive tool for conducting power flow analysis in distrib
 
 - `dpf_method.py`: Python code for the Decoupled Power Flow method for power flow analysis.
 - `dpf_method.m`: MATLAB code for the Decoupled Power Flow method for power flow analysis.
+
+## References
+
+- D. Das, “Electrical Power System,” New Age International (P) Publisher, New Delhi, 2006.
